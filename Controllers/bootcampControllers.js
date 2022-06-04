@@ -2,7 +2,7 @@
 //@route GET /api/v1/bootcamps
 //@access Public
 
-const getAllBootcamps = (req, res, next) => {
+exports.getAllBootcamps = (req, res, next) => {
   res.status(200).json({
     message: 'Show all bootcamps',
   })
@@ -12,7 +12,7 @@ const getAllBootcamps = (req, res, next) => {
 //@route GET /api/v1/bootcamps/:id
 //@access Public
 
-const getBootcamp = (req, res, next) => {
+exports.getBootcamp = (req, res, next) => {
   res.status(200).json({
     message: `Show bootcamp ${req.params.id}`,
   })
@@ -22,7 +22,7 @@ const getBootcamp = (req, res, next) => {
 //@route POST /api/v1/bootcamps
 //@access private
 
-const createBootcamp = (req, res, next) => {
+exports.createBootcamp = (req, res, next) => {
   res.status(201).json({
     message: 'Create a new bootcamp',
   })
@@ -32,7 +32,7 @@ const createBootcamp = (req, res, next) => {
 //@route PUT /api/v1/bootcamps/:id
 //@access private
 
-const updateBootcamp = (req, res, next) => {
+exports.updateBootcamp = (req, res, next) => {
   res.status(200).json({
     message: `Update bootcamp ${req.params.id}`,
   })
@@ -42,16 +42,15 @@ const updateBootcamp = (req, res, next) => {
 //@route Delete /api/v1/bootcamps/:id
 //@access private
 
-const deleteBootcamp = (req, res, next) => {
+exports.deleteBootcamp = (req, res, next) => {
   res.status(200).json({
     message: `Delete bootcamp ${req.params.id}`,
   })
 }
-
-module.exports = {
-  getAllBootcamps,
-  getBootcamp,
-  createBootcamp,
-  updateBootcamp,
-  deleteBootcamp,
-}
+// module.exports = {
+//     getAllBootcamps,
+//     getBootcamp,
+//     createBootcamp,
+//     updateBootcamp,
+//     deleteBootcamp,
+//   }

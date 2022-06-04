@@ -8,14 +8,17 @@ const {
   deleteBootcamp,
 } = require('../Controllers/bootcampControllers')
 
-router.get('/', getAllBootcamps)
+router.route('/').get(getAllBootcamps).post(createBootcamp)
+router.route('/:id').get(getBootcamp).put(updateBootcamp).delete(deleteBootcamp)
 
-router.get('/:id', getBootcamp)
+// router.get('/', getAllBootcamps)
 
-router.post('/', createBootcamp)
+// router.get('/:id', getBootcamp)
 
-router.put('/:id', updateBootcamp)
+// router.post('/', createBootcamp)
 
-router.delete('/:id', deleteBootcamp)
+// router.put('/:id', updateBootcamp)
+
+// router.delete('/:id', deleteBootcamp)
 
 module.exports = router

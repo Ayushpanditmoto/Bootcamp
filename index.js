@@ -3,9 +3,17 @@ const app = express()
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
+const morgan = require('morgan')
 
 dotenv.config()
 
+// const logger = require('./Middleware/logger')
+// app.use(logger)
+
+//dev logger middleware
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
 //Route files
 const bootcampRoutes = require('./routes/bootcampRoutes')
 //Mount Routers

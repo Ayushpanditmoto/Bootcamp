@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
 const morgan = require('morgan')
+const errorHandler = require('./Middleware/error')
 
 dotenv.config()
 
@@ -19,6 +20,8 @@ app.use(express.json())
 const bootcampRoutes = require('./routes/bootcampRoutes')
 //Mount Routers
 app.use('/api/v1/bootcamps', bootcampRoutes)
+//Error Handler
+app.use(errorHandler)
 
 app.get('/', (req, res) => {
   res.status(200).json({

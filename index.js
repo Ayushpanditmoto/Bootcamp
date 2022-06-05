@@ -9,11 +9,12 @@ dotenv.config()
 
 // const logger = require('./Middleware/logger')
 // app.use(logger)
-
 //dev logger middleware
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
+//Body parsher
+app.use(express.json())
 //Route files
 const bootcampRoutes = require('./routes/bootcampRoutes')
 //Mount Routers
